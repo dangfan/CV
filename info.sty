@@ -1,0 +1,60 @@
+\ProvidesPackage{info}
+\RequirePackage{hyperref}
+\RequirePackage{metalogo}
+
+% moderncv themes
+\moderncvtheme[orange]{classic} % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+%\moderncvtheme[green]{casual}   % idem
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+
+% personal data
+\firstname{党}
+\familyname{凡}
+\address{北京市海淀区清华大学紫荆1号楼215A}{100084}
+\mobile{+86-15210560993}
+\email{dangf09@gmail.com}
+\homepage{www.dangfan.me}
+\photo[64pt]{identity}
+
+
+\AtBeginDocument{\renewcommand{\labelitemi}{-- }}
+
+\usepackage[firstyear=2006,lastyear=2012]{moderntimeline}
+%\tlmaxdates{1999}{2012}
+\tlwidth{0.8ex}
+
+
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+
+\usepackage{microtype}
+
+
+
+% Proper alignment
+\usepackage[originalcommands]{ragged2e}
+\renewcommand*{\cvcomputer}[4]{%
+  \cvdoubleitem{#1}{\small\raggedright#2}{#3}{\small\raggedright#4}}
+
+% Not all fonts have an sl shape
+\renewcommand*{\cventry}[6]{%
+  \cvline{#1}{%
+    {\bfseries#2}%
+    \ifx#3\else{, {\itshape#3}}\fi%
+    \ifx#4\else{, #4}\fi%
+    \ifx#5\else{, #5}\fi%
+    .%
+    \ifx#6\else{\newline{}\begin{minipage}[t]{\linewidth}\small#6\end{minipage}}\fi
+    }}%
+
+
+% Refine quote 
+\newcommand*{\myquote}[2]{%
+   \quote{\itshape #1 \\ \scshape \footnotesize #2}}
+
+% Hobbies
+\newcommand*{\cvhobby}[2]{\cvline{#1}{\small #2}}
+
+
